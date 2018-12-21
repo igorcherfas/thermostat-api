@@ -1,0 +1,34 @@
+swagger: "2.0"
+info:
+        description: API defininition
+        version: "1.0.0"
+        title: REST Article
+consumes:
+        - "application/json"
+produces:
+        - "application/json"
+
+         
+basePath: "/api"
+
+paths:
+        /temp:
+          get:
+                  operationId: "temp.read"
+                  tags:
+                          - "temp"
+                  summary: "Temp Data Structure supported by the application"
+                  description: "read temp settings"
+                  responses:
+                          200:
+                                  description: "Successful temp read operation"
+                                  schema:
+                                          type: "array"
+                                          items:
+                                                  properties:
+                                                          current_temp:
+                                                                  type: "integer"
+                                                          set_point:
+                                                                  type: "integer"
+                                                          timestamp:
+                                                                  type: "string"
